@@ -34,10 +34,6 @@ function App() {
     validateWin(newState);
   };
 
-  const toggleTurn = () => {
-    setCurrTurn(currTurn === "🌀" ? "❎" : "🌀");
-  };
-
   const restart = () => {
     setCurrTurn("🌀");
     setWon(false);
@@ -63,7 +59,7 @@ function App() {
         setCurrTurn("NO ONE");
         setWon(true);
       } else {
-        toggleTurn();
+        setCurrTurn(currTurn === "🌀" ? "❎" : "🌀");
       }
     }
   };

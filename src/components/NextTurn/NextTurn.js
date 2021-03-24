@@ -1,13 +1,11 @@
 function NextTurn({ won, boardFull, currTurn }) {
   return (
     <p className="status">
-      <strong className={`${won || boardFull ? "hide" : ""} status-text`}>
-        Who's next:
-      </strong>{" "}
+      {!won && !boardFull && (
+        <strong className="status-text">Who's next:</strong>
+      )}{" "}
       <span className="next">{currTurn}</span>{" "}
-      <span className={`${won || boardFull ? "" : "hide"} status-text`}>
-        WINS!
-      </span>
+      {(won || boardFull) && <span className="status-text">WINS!</span>}
     </p>
   );
 }
